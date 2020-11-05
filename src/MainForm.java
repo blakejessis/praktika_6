@@ -102,12 +102,23 @@ class CalcPanel extends JPanel implements ActionListener {
                     res = Double.parseDouble(first) * Double.parseDouble(second);
                     break;
             }
+            if (res % 1 == 0){
+                int value;
+                value  = (int) res;
+                display.setText(first + operand + second + "=" + value);
 
-            display.setText(first + operand + second + "=" + res);
+                first = Integer.toString(value);
 
-            first = Double.toString(res);
+                operand = second = "";
 
-            operand = second = "";
+            }else {
+
+                display.setText(first + operand + second + "=" + res);
+
+                first = Double.toString(res);
+
+                operand = second = "";
+            }
 
         } else if (s.charAt(0) == '%') {
             double res;
@@ -168,3 +179,4 @@ class CalcPanel extends JPanel implements ActionListener {
         }
     }
 }
+
