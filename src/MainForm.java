@@ -75,9 +75,9 @@ class CalcPanel extends JPanel implements ActionListener {
 
         if ((s.charAt(0) >= '0' && s.charAt(0) <= '9') || s.charAt(0) == '.') {
             if (!operand.equals("")) {
-                second = second + s;
+                second += s;
             } else {
-                first = first + s;
+                first += s;
             }
             display.setText(first + operand + second);
         }
@@ -109,14 +109,7 @@ class CalcPanel extends JPanel implements ActionListener {
 
             operand = second = "";
 
-        } else if (s.charAt(0) == '%') {
-
-            /*double res = switch (operand) {
-                case "+" -> (Double.parseDouble(first) + (Double.parseDouble(first)) / 100 * Double.parseDouble(second));
-                case "-" -> (Double.parseDouble(first) - (Double.parseDouble(first)) / 100 * Double.parseDouble(second));
-                case "/" -> ((Double.parseDouble(first) / (Double.parseDouble(second) / 100)));
-                default -> (Double.parseDouble(first) * Double.parseDouble(second) / 100);
-            };*/
+        } else if (s.charAt(0) == '%') 
             double res;
             switch(operand){
                 case "+":
