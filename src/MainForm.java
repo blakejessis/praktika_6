@@ -109,7 +109,7 @@ class CalcPanel extends JPanel implements ActionListener {
 
             operand = second = "";
 
-        } else if (s.charAt(0) == '%') 
+        } else if (s.charAt(0) == '%') {
             double res;
             switch(operand){
                 case "+":
